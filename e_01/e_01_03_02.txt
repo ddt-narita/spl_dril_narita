@@ -1,0 +1,19 @@
+演習01-03-02
+アクセス記録テーブルから重複なくリンク元URLを取り出し
+作成日：6月13日
+作成者：成田修之
+
+SELECT DISTINCT referer FROM access_log;
+
++---------------------------+
+| referer                   |
++---------------------------+
+| http://wings.msn.to/hamu/ |
+| http://wings.msn.to/neko/ |
+| http://wings.msn.to/inu/  |
+| http://wings.msn.to/saru/ |
+| http://wings.msn.to/tori/ |
+| http://wings.msn.to/kame/ |
+| NULL                      |
++---------------------------+
+7 rows in set (0.00 sec)

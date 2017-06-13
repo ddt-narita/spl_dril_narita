@@ -1,0 +1,17 @@
+演習01-05-05
+書籍情報テーブルから名前が「社」で終わる出版社の情報だけを取り出す命令の訂正
+取り出す列はtitle列
+作成日：6月13日
+作成者：成田修之
+
+SELECT title, FROM books WHERE publish LIKE '_社'
+↓
+SELECT title FROM books WHERE publish LIKE '%社';
+
++----------+
+| title    |
++----------+
+| XML辞典  |
+| PEAR入門 |
++----------+
+2 rows in set (0.00 sec)

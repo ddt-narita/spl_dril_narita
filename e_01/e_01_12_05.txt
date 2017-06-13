@@ -1,0 +1,41 @@
+演習01-12-05
+社員テーブルから所属部署ごとの女性の人数を求め、3人以上の部署だけ出力する命令の訂正
+作成日：6月13日
+作成者：成田修之
+
+SELECT
+	depart_id,
+	COUNT(*)
+FROM
+	employee
+WHERE
+	sex = 2
+ORDER BY
+	depart_id
+WHERE
+	COUNT(*) >= 3
+;
+
+↓↓
+
+SELECT
+	depart_id,
+	COUNT(*)
+FROM
+	employee
+WHERE
+	sex = 2
+GROUP BY
+	depart_id
+HAVING
+	COUNT(*) >= 3
+;
+
+
++-----------+----------+
+| depart_id | COUNT(*) |
++-----------+----------+
+| S01       |        4 |
+| S02       |        5 |
++-----------+----------+
+2 rows in set (0.00 sec)

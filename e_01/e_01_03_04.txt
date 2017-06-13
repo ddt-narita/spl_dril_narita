@@ -1,0 +1,19 @@
+演習01-03-04
+社員テーブルから重複なく役職を取り出す命令の訂正
+作成日：6月13日
+作成者：成田修之
+
+SELECT ALL class, depart_id FROM employee;
+↓
+SELECT DISTINCT class FROM employee;
+
++--------------+
+| class        |
++--------------+
+| 部長         |
+| 担当         |
+| 主任         |
+| アシスタント |
+| 課長         |
++--------------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,23 @@
+演習01-12-01
+アンケート回答テーブルから都道府県ごとの年齢の平均値を求め35歳以上50歳未満のデータのみを取り出す
+作成日：6月13日
+作成者：成田修之
+
+SELECT
+	prefecture,
+	AVG(age)
+FROM
+	quest
+GROUP BY
+	prefecture
+HAVING
+	AVG(age) BETWEEN 35 AND 50
+;
+
+
++------------+----------+
+| prefecture | AVG(age) |
++------------+----------+
+| 茨城県     |  38.6667 |
++------------+----------+
+1 row in set (0.00 sec)

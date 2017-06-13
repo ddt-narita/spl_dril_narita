@@ -1,0 +1,31 @@
+演習01-12-06
+アクセス記録テーブルからアクセス日付が2013/01/01以降のものについてリンク元URLごとに
+アクセス数を算出してみる。その際、アクセス数が5件未満の者のみをアクセス降順で出力
+作成日：6月13日
+作成者：成田修之
+
+SELECT
+	referer,
+	COUNT(*)
+FROM
+	access_log
+WHERE
+	access_date > '2013-01-01'
+GROUP BY
+	referer
+HAVING
+	COUNT(*)
+ORDER BY 
+	COUNT(*) DESC
+;
+
++---------------------------+----------+
+| referer                   | COUNT(*) |
++---------------------------+----------+
+| http://wings.msn.to/hamu/ |        6 |
+| http://wings.msn.to/neko/ |        3 |
+| http://wings.msn.to/saru/ |        1 |
+| http://wings.msn.to/kame/ |        1 |
+| http://wings.msn.to/tori/ |        1 |
++---------------------------+----------+
+5 rows in set (0.00 sec)

@@ -1,0 +1,23 @@
+‰‰K01-12-03
+’˜ŽÒ-‘Ðî•ñƒe[ƒuƒ‹‚©‚ç’˜ŽÒ‚²‚Æ‚Ì‘Ð”‚ð‹‚ß“o˜^”‚ª3ûˆÈã‚Ìî•ñ‚¾‚¯Žæ‚èo‚·B
+ì¬“úF6ŒŽ13“ú
+ì¬ŽÒF¬“cC”V
+
+SELECT
+	author_id,
+	COUNT(isbn)
+FROM
+	author_books
+GROUP BY
+	author_id
+HAVING
+	COUNT(isbn) > 3
+;
+
+
++-----------+-------------+
+| author_id | COUNT(isbn) |
++-----------+-------------+
+| Y0002     |           4 |
++-----------+-------------+
+1 row in set (0.00 sec)
