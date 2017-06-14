@@ -1,0 +1,39 @@
+‰‰K02-05-03
+“X•Üƒe[ƒuƒ‹‚ÆŒŽŠÔ”„ãƒe[ƒuƒ‹‚©‚ç2012”N12ŒŽ‚Ì”„ã‚‚ª“X•Ü”„‚èã‚°•½‹Ï‚ð
+‰º‰ñ‚Á‚Ä‚¢‚é“X•Ü–¼‚Æ‚»‚Ì”„ã‚‚ðo—Í
+ì¬“úF6ŒŽ14“ú
+ì¬ŽÒF¬“cC”V
+
+SELECT
+	sh.s_name,
+	sl.s_value
+FROM
+	shop AS sh
+INNER JOIN
+	sales AS sl
+ON
+	sh.s_id = sl.s_id
+
+WHERE
+	sl.s_value 
+	>
+	(
+	SELECT
+		AVG(s_value)
+	FROM
+		sales
+	WHERE
+		s_date = '2012-12'
+	)
+	AND
+	sl.s_date = '2012-12'
+;
+
+
++--------------+---------+
+| s_name       | s_value |
++--------------+---------+
+| –k‰Ô’¬‰w‘O“X |   11234 |
+| ŽO‹g’¬“X     |   11145 |
++--------------+---------+
+3 rows in set (0.00 sec)
