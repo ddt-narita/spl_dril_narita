@@ -1,0 +1,22 @@
+演習02-06-05
+ユーザーテーブル、アンケート回答テーブルにそれぞれに含まれるユーザー氏名を比較し双方に含まれる
+データのみを取り出す
+作成日：6月14日
+作成者：成田修之
+
+	SELECT
+		CONCAT(u.l_name, u.f_name)
+	FROM
+		usr AS u
+INTERSECT
+	SELECT
+		q.name
+	FROM
+		quest AS q
+;	
+
+
+  concat
+----------
+ 山田太郎
+(1 行)
