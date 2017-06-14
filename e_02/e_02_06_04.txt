@@ -1,0 +1,66 @@
+演習02-06-04
+緒積情報テーブルとユーザーテーブルからそれぞれ指名の情報を取り出すためのSQL命令の訂正
+統合したデータは重複を含まないものとし、結果は氏名（カナ）について降順で
+作成日：6月14日
+作成者：成田修之
+
+	SELECT
+		a.name_kana
+	FROM
+		author AS a
+UNION ALL
+	SELECT
+		u.l_name_kana,
+		u.f_name_kana
+	FROM
+		usr AS u
+ORDER BY
+	1 DESC
+;
+
+↓↓
+
+	SELECT
+		a.name_kana
+	FROM
+		author AS a
+UNION
+	SELECT
+		CONCAT(u.l_name_kana, u.f_name_kana)
+	FROM
+		usr AS u
+ORDER BY
+	1 DESC
+;
+
+
+    name_kana
+------------------
+ ワダシュウコ
+ ヨシオカハルカ
+ ヤマダヨシヒロ
+ ヤマダタロウ
+ ヤマダアイコ
+ ヤグチアユミ
+ モリモトエリ
+ モリグチヤスオ
+ ムライサチコ
+ ミナミサエ
+ マツモトヒロミ
+ ネギシユウコ
+ ニシジマフミコ
+ タナカタロウ
+ サトウイチロウ
+ サカグチシュン
+ コダマツヨシ
+ クボタマモル
+ キノシタカズキ
+ カワナカトモキ
+ カワイヤスハル
+ オノユウジ
+ エモトサトシ
+ ウエハラコウイチ
+ イノウエイチロウ
+ アリヨシハルミ
+ アリキマリ
+(27 行)
