@@ -1,0 +1,38 @@
+演習02-01-04
+貸出記録テーブルとユーザーテーブルからそれぞれのユーザーについて現在何冊を貸し出しているかを
+貸し出し数の多い順に取得する。取得列はユーザの氏名貸し出し数、また貸出0のユーザは出力しない
+作成日：6月14日
+作成者：成田修之
+
+SELECT
+	CONCAT(u.l_name, u.f_name) AS 氏名,
+	COUNT(r.returned) AS 貸し出し数
+FROM
+	rental AS r
+INNER JOIN
+	usr AS u
+ON
+	r.user_id = u.user_id
+WHERE
+	r.returned = 0
+GROUP BY
+	r.user_id
+HAVING
+	COUNT(r.returned) <> 0
+ORDER BY
+	COUNT(r.returned) DESC
+;
+
++----------+------------+
+| 氏名     | 貸し出し数 |
++----------+------------+
+| 河合泰治 |          2 |
+| 西島文子 |          2 |
+| 吉岡遥   |          1 |
+| 森本絵里 |          1 |
+| 松本博美 |          1 |
+| 根岸裕子 |          1 |
+| 和田修子 |          1 |
+| 上原幸一 |          1 |
++----------+------------+
+8 rows in set (0.00 sec)

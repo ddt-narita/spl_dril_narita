@@ -1,0 +1,28 @@
+演習02-05-02
+所属部署テーブルから社員テーブルで使われていない部署コード部署名を取り出す
+作成日：6月14日
+作成者：成田修之
+
+SELECT
+	depart_id,
+	depart_name
+FROM
+	depart AS d
+WHERE
+	NOT EXISTS
+	(
+	SELECT
+		*
+	FROM
+		employee AS e
+	WHERE
+		e.depart_id = d.depart_id 
+	)
+;
+
++-----------+-------------+
+| depart_id | depart_name |
++-----------+-------------+
+| E02       | 第二営業部  |
++-----------+-------------+
+1 row in set (0.00 sec)

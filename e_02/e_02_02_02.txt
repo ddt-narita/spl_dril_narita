@@ -1,0 +1,24 @@
+演習02-02-02
+社員テーブルと所属部署テーブルを結合し、所属社員が一人もいない幽霊部署を洗い出す
+作成日：6月14日
+作成者：成田修之
+
+SELECT
+	d.depart_id AS 部署ID,
+	d.depart_name AS 幽霊部署
+FROM
+	depart AS d
+LEFT JOIN
+	employee AS e
+ON
+	d.depart_id = e.depart_id
+WHERE
+	e.s_id IS NULL
+;
+
++--------+------------+
+| 部署ID | 幽霊部署   |
++--------+------------+
+| E02    | 第二営業部 |
++--------+------------+
+1 row in set (0.00 sec)
