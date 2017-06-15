@@ -1,0 +1,43 @@
+演習04-02-04
+ユーザーテーブルに対して住所で複合インデックスを作成する命令の訂正
+作成日：6月15日
+作成者：成田修之
+
+CREATE INDEX
+	ind_usr
+IN
+	usr
+	(
+	prefecture
+	city
+	o_address
+	)
+;
+
+↓↓
+
+CREATE INDEX
+	ind_usr
+ON
+	usr
+	(
+	prefecture,
+	city,
+	o_address
+	)
+;
+
+
+Query OK, 0 rows affected (0.34 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| usr   |          0 | PRIMARY  |            1 | user_id     | A         |          21 |     NULL | NULL   |      | BTREE      |         |               |
+| usr   |          1 | ind_usr  |            1 | prefecture  | A         |          21 |     NULL | NULL   | YES  | BTREE      |         |               |
+| usr   |          1 | ind_usr  |            2 | city        | A         |          21 |     NULL | NULL   | YES  | BTREE      |         |               |
+| usr   |          1 | ind_usr  |            3 | o_address   | A         |          21 |     NULL | NULL   | YES  | BTREE      |         |               |
++-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+4 rows in set (0.00 sec)
+
