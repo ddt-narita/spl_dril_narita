@@ -1,0 +1,26 @@
+演習04-03-02
+月間売上テーブルを主キーのない状態で新規作成し、後から主キーを追加
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE
+	sales
+	(
+	s_id CHAR(5) NOT NULL,
+	s_date CHAR(7) NOT NULL,
+	s_value INT DEFAULT 0
+	)
+;
+ALTER TABLE
+	sales
+ADD
+	PRIMARY KEY(s_id, s_date)
+;
+
+CREATE TABLE
+
+ALTER TABLE
+
+ s_id | s_date | s_value
+------+--------+---------
+(0 行)
