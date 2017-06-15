@@ -1,0 +1,20 @@
+演習04-01-04
+月間売上テーブルを新規作成
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE
+	sales
+	(
+	s_id CHAR(5) NOT NULL,
+	s_date CHAR(7) NOT NULL,
+	s_value INT,
+	PRIMARY KEY(s_id, s_date)
+	)
+;
+
+CREATE TABLE
+
+ s_id | s_date | s_value
+------+--------+---------
+(0 行)
