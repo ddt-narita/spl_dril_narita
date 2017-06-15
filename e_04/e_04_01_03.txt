@@ -1,0 +1,22 @@
+演習04-01-03
+書籍情報テーブルの新規作成
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE
+	books
+	(
+	isbn CHAR(17) PRIMARY KEY,
+	title VARCHAR(255),
+	price INT,
+	publish VARCHAR(30),
+	publish_date DATE,
+	category_id CHAR(5)
+	)
+;
+
+CREATE TABLE
+
+ isbn | title | price | publish | publish_date | category_id
+------+-------+-------+---------+--------------+-------------
+(0 行)
