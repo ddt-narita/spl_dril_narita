@@ -1,0 +1,20 @@
+演習04-01-01
+著者情報テーブルを新規作成
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE
+	author
+	(
+	author_id CHAR(5) PRIMARY KEY,
+	name VARCHAR(30),
+	name_kana VARCHAR(100),
+	birth DATE
+	)
+;
+
+CREATE TABLE
+
+ author_id | name | name_kana | birth
+-----------+------+-----------+-------
+(0 行)
