@@ -1,0 +1,20 @@
+演習04-01-02
+注文詳細テーブルを新規作成
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE
+	order_desc
+	(
+	po_id INT NOT NULL,
+	p_id CHAR(10) NOT NULL,
+	quantity INT,
+	PRIMARY KEY (po_id, p_id)
+	)
+;
+
+CREATE TABLE
+
+ po_id | p_id | quantity
+-------+------+----------
+(0 行)
