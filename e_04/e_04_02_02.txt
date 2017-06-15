@@ -1,0 +1,27 @@
+演習04-02-02
+注文書テーブルに発注日、納品日wおキーにした複合インデックスを作成
+作成日：6月15日
+作成者：成田修之
+
+CREATE INDEX
+	ind_order
+ON
+	order_main
+	(
+	order_date,
+	delivery_date
+	)
+;
+
+
+Query OK, 0 rows affected (0.20 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| Table      | Non_unique | Key_name  | Seq_in_index | Column_name   | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment |
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+| order_main |          0 | PRIMARY   |            1 | po_id         | A         |          20 |     NULL | NULL   |      | BTREE      |         |               |
+| order_main |          1 | ind_order |            1 | order_date    | A         |          20 |     NULL | NULL   | YES  | BTREE      |         |               |
+| order_main |          1 | ind_order |            2 | delivery_date | A         |          20 |     NULL | NULL   | YES  | BTREE      |         |               |
++------------+------------+-----------+--------------+---------------+-----------+-------------+----------+--------+------+------------+---------+---------------+
+3 rows in set (0.00 sec)
