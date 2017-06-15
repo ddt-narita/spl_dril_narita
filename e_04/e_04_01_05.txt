@@ -1,0 +1,37 @@
+演習04-01-05
+貸出記録テーブルを新規に作成する命令の訂正
+作成日：6月15日
+作成者：成田修之
+
+CREATE TABLE INTO
+	rental
+	(
+	id INT AUTO_INCREMENT, PRIMARY KEY,
+	user_id CHAR(7),
+	isbn CHAR(13),
+	rental_date DATE,
+	returned SMALLINT DEFAULT 0
+	)
+;
+
+↓↓
+
+CREATE TABLE
+	rental
+	(
+	id INT AUTO_INCREMENT,
+	user_id CHAR(7),
+	isbn CHAR(13),
+	rental_date DATE,
+	returned SMALLINT DEFAULT 0,
+	PRIMARY KEY(id)
+	)
+;
+
++----------------+
+| Tables_in_test |
++----------------+
+| quest          |
+| rental         |
++----------------+
+2 rows in set (0.00 sec)
